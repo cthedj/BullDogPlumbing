@@ -63,14 +63,14 @@
   </nav>
 
   <!-- HERO -->
-  <header class="bg-primary text-white py-16 px-6 text-center shadow-lg" x-data="{ show: false }" x-intersect.once="show = true">
+  <header class="bg-white text-accent py-16 px-6 text-center shadow-lg" x-data="{ show: false }" x-intersect.once="show = true">
     <div class="transition-all duration-700" x-show="show" x-transition>
       <div class="flex flex-col md:flex-row items-center justify-center gap-4">
         <img src="assets/img/logo.png" alt="Bulldog Plumbing Logo" class="w-16 h-16 object-contain" />
-        <h1 class="text-4xl md:text-5xl font-heading font-bold text-white">Bulldog Plumbing</h1>
+        <h1 class="text-4xl md:text-5xl font-heading font-bold text-accent">Bulldog Plumbing</h1>
       </div>
       <p class="text-lg md:text-xl mt-4">Cape Town’s Fast, Reliable, Professional Plumbing Service</p>
-      <a href="#contact" class="mt-6 inline-block bg-white text-primary font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100 transition">Book Now</a>
+      <a href="#contact" class="mt-6 inline-block bg-primary text-white font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-500 transition">Book Now</a>
     </div>
   </header>
 
@@ -106,8 +106,6 @@
       </div>
     </div>
   </section>
-
-  <!-- FORM + CONTACT + FOOTER OMITTED FOR BREVITY -->
 
 </body>
 </html>
