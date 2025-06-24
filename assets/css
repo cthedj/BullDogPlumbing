@@ -1,0 +1,45 @@
+/* Custom Styles for Bulldog Plumbing */
+:root {
+  --primary: #1e3a8a; /* Tailwind's blue-800 */
+  --accent: #3b82f6;  /* Tailwind's blue-500 */
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+/* Smooth hover scaling for cards */
+.service-card {
+  transition: transform 0.3s ease;
+}
+.service-card:hover {
+  transform: scale(1.03);
+}
+
+/* Add a subtle shadow on hover for buttons */
+button:hover,
+.btn:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom favicon fallback style (optional) */
+.favicon {
+  width: 32px;
+  height: 32px;
+}
+
+/* Testimonials quote style (can be applied via a class if needed) */
+.testimonial {
+  font-style: italic;
+  border-left: 4px solid var(--primary);
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Form input focus effect */
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
