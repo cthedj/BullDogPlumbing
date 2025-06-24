@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bulldog Plumbing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="favicon.ico">
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <!-- Hero Section -->
+  <section class="bg-blue-800 text-white py-16 px-6 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Bulldog Plumbing</h1>
+    <p class="text-lg md:text-xl mb-6">Fast. Reliable. Professional.</p>
+    <a href="#contact" class="bg-white text-blue-800 px-6 py-2 rounded-full font-semibold shadow-md hover:bg-gray-100">Book a Job</a>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-12 px-6 max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold mb-4 text-blue-800">About Us</h2>
+    <p>We’re a Cape Town-based plumbing company with a passion for reliable service and quality workmanship. From leak detection to full bathroom installations, we’ve got you covered.</p>
+  </section>
+
+  <!-- Services Section -->
+  <section class="bg-white py-12 px-6 max-w-6xl mx-auto">
+    <h2 class="text-2xl font-bold mb-6 text-blue-800 text-center">Our Services</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-gray-50 p-6 rounded shadow hover:shadow-lg">
+        <h3 class="text-xl font-semibold text-blue-700 mb-2">Leak Detection</h3>
+        <p>We find and fix leaks quickly to prevent further damage.</p>
+      </div>
+      <div class="bg-gray-50 p-6 rounded shadow hover:shadow-lg">
+        <h3 class="text-xl font-semibold text-blue-700 mb-2">Pipe Repairs</h3>
+        <p>From burst pipes to low pressure — we handle it all.</p>
+      </div>
+      <div class="bg-gray-50 p-6 rounded shadow hover:shadow-lg">
+        <h3 class="text-xl font-semibold text-blue-700 mb-2">Bathroom Installations</h3>
+        <p>Full-service renovations or fittings for new homes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Form -->
+  <section id="contact" class="py-12 px-6 bg-blue-50">
+    <h2 class="text-2xl font-bold mb-4 text-blue-800 text-center">Book a Job</h2>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="max-w-3xl mx-auto space-y-4">
+      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded" />
+      <input type="tel" name="phone" placeholder="Phone Number" required class="w-full p-3 border border-gray-300 rounded" />
+      <input type="email" name="email" placeholder="Email Address" required class="w-full p-3 border border-gray-300 rounded" />
+      <textarea name="message" placeholder="What can we help you with?" rows="4" required class="w-full p-3 border border-gray-300 rounded"></textarea>
+      <button type="submit" class="w-full bg-blue-800 text-white py-3 rounded hover:bg-blue-700">Submit Request</button>
+    </form>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-12 px-6 bg-white max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold mb-6 text-blue-800 text-center">What Our Clients Say</h2>
+    <blockquote class="italic border-l-4 border-blue-800 pl-4 mb-4">"Reliable and professional. Bulldog Plumbing sorted out my bathroom leak the same day!" – Amanda, Durbanville</blockquote>
+    <blockquote class="italic border-l-4 border-blue-800 pl-4">"Top-notch service and friendly staff." – Mark, Kuils River</blockquote>
+  </section>
+
+  <!-- Contact -->
+  <section class="bg-blue-800 text-white py-10 px-6 text-center">
+    <p class="mb-2">📞 083 456 7890 | 📧 bulldogplumbing@gmail.com</p>
+    <p>Cape Town, Western Cape</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 text-center py-4 text-sm">
+    © 2025 Bulldog Plumbing. All rights reserved.
+  </footer>
+</body>
+</html>
