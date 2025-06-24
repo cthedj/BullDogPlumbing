@@ -67,10 +67,10 @@
     <div class="transition-all duration-700" x-show="show" x-transition>
       <div class="flex flex-col md:flex-row items-center justify-center gap-4">
         <img src="assets/img/logo.png" alt="Bulldog Plumbing Logo" class="w-16 h-16 object-contain" />
-        <h1 class="text-4xl md:text-5xl font-heading font-bold text-accent">Bulldog Plumbing</h1>
+        <h1 class="text-5xl md:text-6xl font-heading font-bold text-accent">Bulldog Plumbing</h1>
       </div>
       <p class="text-lg md:text-xl mt-4">Cape Town’s Fast, Reliable, Professional Plumbing Service</p>
-      <a href="#contact" class="mt-6 inline-block bg-primary text-white font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-500 transition">Book Now</a>
+      <a href="#contact" class="mt-6 inline-block bg-accent text-white font-semibold px-6 py-2 rounded-full shadow hover:bg-accent/90 transition">Book Now</a>
     </div>
   </header>
 
@@ -96,14 +96,33 @@
           <p>We detect and repair leaks fast using modern tools and proven methods.</p>
         </div>
         <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+          <img src="assets/img/pipe-repairs.jpg" alt="Pipe Repairs" class="mb-4 rounded object-cover h-40 w-full" />
           <h3 class="text-xl font-semibold text-accent mb-2">Pipe Repairs</h3>
           <p>We handle burst pipes, pressure drops, and water flow problems of all kinds.</p>
         </div>
         <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+          <img src="assets/img/bathroom-install.jpg" alt="Bathroom Installations" class="mb-4 rounded object-cover h-40 w-full" />
           <h3 class="text-xl font-semibold text-accent mb-2">Bathroom Installations</h3>
           <p>From plumbing rough-ins to fittings and finishes — we install it right.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16 px-6 bg-white" x-data="{ visible: false }" x-intersect.once="visible = true">
+    <div class="max-w-3xl mx-auto text-center transition-opacity duration-700" x-show="visible" x-transition>
+      <h2 class="text-3xl font-heading font-bold text-accent mb-6">Get in Touch</h2>
+      <p class="mb-8 text-gray-600">Need help fast? Fill out the form below and we'll get back to you shortly.</p>
+      <form action="https://formspree.io/f/yourFormID" method="POST" class="grid gap-6">
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="text" name="name" placeholder="Your Name" required class="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-primary" />
+          <input type="email" name="email" placeholder="Your Email" required class="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-primary" />
+        </div>
+        <input type="text" name="subject" placeholder="Subject" class="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-primary" />
+        <textarea name="message" rows="5" placeholder="How can we help you?" required class="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+        <button type="submit" class="bg-accent text-white font-semibold py-3 px-6 rounded-full shadow hover:bg-accent/90 transition">Send Message</button>
+      </form>
     </div>
   </section>
 
