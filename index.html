@@ -11,14 +11,14 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Urbanist:wght@600;700&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind CSS with font config -->
+  <!-- Tailwind CSS + Custom Font Config -->
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            primary: '#60a5fa', // Soft blue (Tailwind's sky-400)
-            accent: '#1e40af'  // Slightly deeper for buttons
+            primary: '#60a5fa',  // sky-400
+            accent: '#1e40af'    // blue-900
           },
           fontFamily: {
             sans: ['Open Sans', 'sans-serif'],
@@ -33,50 +33,50 @@
 
 <body class="bg-white text-gray-800 font-sans">
 
-  <!-- Hero Section -->
-  <section class="bg-primary text-white py-16 px-6 text-center shadow-md">
+  <!-- HERO -->
+  <header class="bg-primary text-white py-16 px-6 text-center shadow-lg">
     <div class="flex flex-col md:flex-row items-center justify-center gap-4">
       <img src="assets/img/logo.png" alt="Bulldog Plumbing Logo" class="w-16 h-16 object-contain" />
       <h1 class="text-4xl md:text-5xl font-heading font-bold">Bulldog Plumbing</h1>
     </div>
-    <p class="text-lg md:text-xl mt-4">Reliable plumbing services in Cape Town</p>
-    <a href="#contact" class="mt-6 inline-block bg-white text-primary font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100 transition">Book a Job</a>
-  </section>
+    <p class="text-lg md:text-xl mt-4">Cape Town’s Fast, Reliable, Professional Plumbing Service</p>
+    <a href="#contact" class="mt-6 inline-block bg-white text-primary font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100 transition">Book Now</a>
+  </header>
 
-  <!-- About Section -->
+  <!-- ABOUT -->
   <section class="py-16 px-6 max-w-6xl mx-auto">
     <div class="grid md:grid-cols-2 gap-10 items-center">
       <div>
         <h2 class="text-3xl font-heading font-bold text-primary mb-4">About Us</h2>
-        <p class="text-gray-700 text-lg leading-relaxed">At Bulldog Plumbing, we pride ourselves on honest work, fair pricing, and reliable service. With years of experience serving homes and businesses across Cape Town, we specialize in everything from emergency repairs to full bathroom installations.</p>
+        <p class="text-gray-700 text-lg leading-relaxed">At Bulldog Plumbing, we believe that every leak matters. Whether you're dealing with an emergency or planning a new installation, our team delivers expert service with honesty and care.</p>
       </div>
-      <img src="assets/img/about.jpg" alt="About Us" class="rounded-lg shadow-md object-cover" />
+      <img src="assets/img/about.jpg" alt="About Bulldog Plumbing" class="rounded-lg shadow-md object-cover" />
     </div>
   </section>
 
-  <!-- Services Section -->
+  <!-- SERVICES -->
   <section class="bg-gray-50 py-16 px-6">
     <div class="max-w-6xl mx-auto text-center">
       <h2 class="text-3xl font-heading font-bold text-primary mb-10">Our Services</h2>
-      <div class="grid md:grid-cols-3 gap-8 text-left">
+      <div class="grid md:grid-cols-3 gap-8">
         <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
           <img src="assets/img/services.jpg" alt="Leak Detection" class="mb-4 rounded object-cover h-40 w-full" />
           <h3 class="text-xl font-semibold text-accent mb-2">Leak Detection</h3>
-          <p>We quickly locate and fix leaks to prevent further damage to your home or business.</p>
+          <p>We detect and repair leaks fast using modern tools and proven methods.</p>
         </div>
         <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
           <h3 class="text-xl font-semibold text-accent mb-2">Pipe Repairs</h3>
-          <p>We fix burst pipes, low water pressure, or corrosion issues with lasting results.</p>
+          <p>We handle burst pipes, pressure drops, and water flow problems of all kinds.</p>
         </div>
         <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
           <h3 class="text-xl font-semibold text-accent mb-2">Bathroom Installations</h3>
-          <p>New builds or renovations, our team handles plumbing for modern, functional bathrooms.</p>
+          <p>From plumbing rough-ins to fittings and finishes — we install it right.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Booking Form -->
+  <!-- BOOKING FORM -->
   <section id="contact" class="py-16 px-6 max-w-6xl mx-auto">
     <div class="grid md:grid-cols-2 gap-10 items-center">
       <div>
@@ -89,31 +89,32 @@
           <button type="submit" class="w-full bg-accent text-white py-3 rounded hover:bg-blue-900 transition">Submit Request</button>
         </form>
       </div>
-      <img src="assets/img/booking.jpg" alt="Booking" class="rounded-lg shadow-md object-cover" />
+      <img src="assets/img/booking.jpg" alt="Book Plumbing Services" class="rounded-lg shadow-md object-cover" />
     </div>
   </section>
 
-  <!-- Testimonials -->
+  <!-- TESTIMONIALS -->
   <section class="py-16 px-6 bg-gray-100">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl font-heading font-bold text-primary mb-6">What Clients Say</h2>
-      <blockquote class="italic text-gray-700 mb-4 border-l-4 border-primary pl-4">"Reliable and professional. Bulldog Plumbing sorted out my bathroom leak the same day!" – Amanda, Durbanville</blockquote>
-      <blockquote class="italic text-gray-700 border-l-4 border-primary pl-4">"Top-notch service and friendly staff." – Mark, Kuils River</blockquote>
+      <blockquote class="italic text-gray-700 mb-4 border-l-4 border-primary pl-4">"Prompt and professional. Bulldog Plumbing sorted our geyser within hours!" – Lisa, Bellville</blockquote>
+      <blockquote class="italic text-gray-700 border-l-4 border-primary pl-4">"Top-notch service. Honest pricing. Highly recommend!" – Yusuf, Durbanville</blockquote>
       <div class="mt-6">
         <img src="assets/img/testimonial.jpg" alt="Happy Clients" class="rounded shadow-md mx-auto max-w-sm object-cover" />
       </div>
     </div>
   </section>
 
-  <!-- Contact Info -->
+  <!-- CONTACT INFO -->
   <section class="bg-accent text-white py-10 text-center">
     <p class="mb-2 text-lg">📞 083 456 7890 | 📧 bulldogplumbing@gmail.com</p>
     <p class="text-sm">Cape Town, Western Cape</p>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="bg-gray-900 text-gray-300 text-center py-4 text-sm">
     © 2025 Bulldog Plumbing. All rights reserved.
   </footer>
+
 </body>
 </html>
