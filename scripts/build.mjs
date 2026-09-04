@@ -7,6 +7,11 @@ const siteUrl = 'https://bulldogplumbing.co.za';
 const phoneDisplay = '+27 72 455 8877';
 const phoneHref = 'tel:+27724558877';
 const whatsappHref = 'https://wa.me/27724558877?text=Hi%20Bulldog%20Plumbing%2C%20I%20need%20help%20with%20a%20plumbing%20job.';
+const socialProfiles = {
+  facebook: 'https://www.facebook.com/bulldogplumbingza/',
+  instagram: 'https://www.instagram.com/bulldog_plumbing_/',
+  tiktok: 'https://www.tiktok.com/@bulldogplumbingza'
+};
 const lastModified = '2026-09-04';
 
 const services = [
@@ -299,6 +304,7 @@ function graphFor(page, faqs = [], crumbs = []) {
     logo: `${siteUrl}/assets/img/logo.png`,
     image: `${siteUrl}/assets/img/about.jpg`,
     telephone: '+27-72-455-8877',
+    sameAs: Object.values(socialProfiles),
     address: {
       '@type': 'PostalAddress',
       streetAddress: '7 Winchester Close',
@@ -472,6 +478,15 @@ function footer(page) {
     </div>
     <div class="footer-bottom">
       <p>© <span data-year>${new Date().getFullYear()}</span> Bulldog Plumbing. All rights reserved.</p>
+      <nav class="footer-social" aria-label="Bulldog Plumbing social media">
+        <a href="${socialProfiles.facebook}" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <span aria-hidden="true">|</span>
+        <a href="${socialProfiles.instagram}" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <span aria-hidden="true">|</span>
+        <a href="${socialProfiles.tiktok}" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <span aria-hidden="true">|</span>
+        <a href="${whatsappHref}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </nav>
       <p>Serving Cape Town from Dreyersdal, Western Cape.</p>
     </div>
   </div>
@@ -556,6 +571,51 @@ function serviceCards(page, limit = services.length) {
 </article>`).join('\n')}</div>`;
 }
 
+function projectGallery(page) {
+  const projects = [
+    {
+      image: 'project-attic-installation.jpg', width: 900, height: 1214,
+      title: 'Installation planning', description: 'Setting out an attic installation with laser-level accuracy.'
+    },
+    {
+      image: 'project-wall-plumbing.jpg', width: 900, height: 1214,
+      title: 'Concealed plumbing', description: 'Neat pipework positioned accurately before the wall is closed.'
+    },
+    {
+      image: 'project-water-heater.jpg', width: 900, height: 1214,
+      title: 'Hot-water installation', description: 'Compact under-counter water heating with new copper pipework.'
+    },
+    {
+      image: 'project-kitchen-mixer.jpg', width: 900, height: 1214,
+      title: 'Kitchen plumbing', description: 'A clean mixer and sink installation ready for everyday use.'
+    },
+    {
+      image: 'project-drain-inspection.png', width: 900, height: 1213,
+      title: 'Drain inspection', description: 'Hands-on investigation to locate and resolve a drainage fault.'
+    },
+    {
+      image: 'project-drain-before-after.jpg', width: 640, height: 640,
+      title: 'Outside drain restored', description: 'A blocked outside drain cleared and flowing again.',
+      source: 'https://www.instagram.com/bulldog_plumbing_/p/DbSl7ayEhUN/'
+    }
+  ];
+
+  return `<section class="section section--projects" id="projects">
+  <div class="container">
+    <div class="section-head">
+      <div><p class="eyebrow">Real work. Real results.</p><h2>Our plumbing projects in action</h2><p class="section-lead">A look at recent Bulldog Plumbing installations, repairs and drain work around Cape Town.</p></div>
+      <a class="text-link" href="${socialProfiles.instagram}" target="_blank" rel="noopener noreferrer">See more on Instagram <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="project-grid">
+      ${projects.map((project) => `<figure class="project-card${project.source ? ' project-card--social' : ''}">
+        ${project.source ? `<a href="${project.source}" target="_blank" rel="noopener noreferrer" aria-label="View ${project.title} on Instagram">` : ''}<img src="${asset(page, `assets/img/${project.image}`)}" width="${project.width}" height="${project.height}" loading="lazy" decoding="async" alt="${project.description}">${project.source ? '</a>' : ''}
+        <figcaption><strong>${project.title}</strong><span>${project.description}${project.source ? ' View the original post on Instagram.' : ''}</span></figcaption>
+      </figure>`).join('\n      ')}
+    </div>
+  </div>
+</section>`;
+}
+
 function homeBody(page) {
   const faqs = [
     ['Is Bulldog Plumbing available 24/7?', 'Yes. Bulldog Plumbing offers 24/7 plumbing service in Cape Town, including weekends and after-hours at no added after-hours cost.'],
@@ -594,6 +654,7 @@ ${trustStrip()}
     ${serviceCards(page, 6)}
   </div>
 </section>
+${projectGallery(page)}
 <section class="section section--ink">
   <div class="container">
     <div class="section-head"><div><p class="eyebrow">Urgent problem?</p><h2>Do these three things first</h2></div></div>
@@ -607,7 +668,7 @@ ${trustStrip()}
 <section class="section">
   <div class="container split">
     <div class="split__image">
-      <img src="${asset(page, 'assets/img/about.jpg')}" width="768" height="960" loading="lazy" alt="Bulldog Plumbing preparing for a residential plumbing project">
+      <img src="${asset(page, 'assets/img/team.jpg')}" width="900" height="677" loading="lazy" decoding="async" alt="Three members of the Bulldog Plumbing team">
       <div class="quote-mark">“We don’t just fix problems; we build trust.”</div>
     </div>
     <div>
@@ -766,7 +827,7 @@ function aboutBody(page) {
 ${innerHero(page, { eyebrow: 'About Bulldog Plumbing', h1: 'Plumbing work built on trust', intro: 'We provide reliable residential and commercial plumbing with honest communication, professional care and the determination to finish the job properly.', code: 'BP', crumbs })}
 <section class="section">
   <div class="container split">
-    <div class="split__image"><img src="${asset(page, 'assets/img/about.jpg')}" width="768" height="960" alt="Bulldog Plumbing reviewing project plans"></div>
+    <div class="split__image"><img src="${asset(page, 'assets/img/team.jpg')}" width="900" height="677" alt="Three members of the Bulldog Plumbing team"></div>
     <div><p class="eyebrow">Our mission</p><h2>Keep homes and businesses running smoothly.</h2><p class="section-lead">From a leaking tap to a complex sewer problem, the principle is the same: understand the fault, explain the work and deliver a lasting solution.</p><p>Bulldog Plumbing serves residential and commercial customers from Dreyersdal across Cape Town. Clear updates matter throughout every job, because customers should know what is happening in their property.</p><ul class="check-list"><li>Honest communication</li><li>Practical solutions</li><li>Careful workmanship</li><li>24/7 availability</li></ul></div>
   </div>
 </section>

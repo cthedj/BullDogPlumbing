@@ -4,6 +4,12 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const errors = [];
+const requiredFooterLinks = [
+  'https://www.facebook.com/bulldogplumbingza/',
+  'https://www.instagram.com/bulldog_plumbing_/',
+  'https://www.tiktok.com/@bulldogplumbingza',
+  'https://wa.me/27724558877?text=Hi%20Bulldog%20Plumbing%2C%20I%20need%20help%20with%20a%20plumbing%20job.'
+];
 
 async function walk(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
@@ -48,6 +54,9 @@ for (const file of htmlFiles) {
   if (!html.includes('application/ld+json')) addError(file, 'missing JSON-LD');
   if (html.includes('+27.724') || html.includes('724ù')) addError(file, 'contains malformed phone number');
   if (html.includes('cdn.tailwindcss.com') || html.includes('unpkg.com')) addError(file, 'contains render-blocking framework CDN');
+  for (const requiredLink of requiredFooterLinks) {
+    if (!html.includes(`href="${requiredLink}"`)) addError(file, `missing footer link ${requiredLink}`);
+  }
 
   for (const [value, label, map] of [[title, 'title', titles], [description, 'description', descriptions], [canonical, 'canonical', canonicals]]) {
     if (map.has(value)) addError(file, `duplicate ${label} also used by ${path.relative(root, map.get(value))}`);
