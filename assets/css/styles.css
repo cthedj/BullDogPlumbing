@@ -868,8 +868,10 @@ p {
 
 .footer-brand img {
   width: 7rem;
+  height: 7rem;
   border-radius: 0.5rem;
   background: var(--white);
+  object-fit: contain;
 }
 
 .footer-brand p {

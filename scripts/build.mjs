@@ -199,6 +199,7 @@ const services = [
 const areas = [
   {
     slug: 'southern-suburbs',
+    cardTitle: 'Southern Suburbs plumbing',
     code: 'SS',
     title: 'Plumber Southern Suburbs Cape Town | Bulldog Plumbing',
     description: 'Local plumber serving Cape Town’s Southern Suburbs from Dreyersdal. 24/7 repairs, geysers, blocked drains, leak detection and free quotes.',
@@ -214,6 +215,7 @@ const areas = [
   },
   {
     slug: 'dreyersdal',
+    cardTitle: 'Plumber in Dreyersdal',
     code: 'DY',
     title: 'Plumber Dreyersdal | 24/7 Bulldog Plumbing',
     description: 'Need a plumber in Dreyersdal? Bulldog Plumbing is locally based and available 24/7 for repairs, blocked drains, geysers and plumbing installations.',
@@ -718,8 +720,8 @@ ${innerHero(page, { eyebrow: 'Local Cape Town coverage', h1: 'Plumbing service a
 ${trustStrip()}
 <section class="section section--warm">
   <div class="container">
-    <div class="section-head"><div><p class="eyebrow">Close to home</p><h2>Our local coverage</h2><p class="section-lead">These pages provide genuinely useful local information. We do not publish hundreds of copied suburb pages.</p></div></div>
-    <div class="card-grid">${areas.map((area) => `<article class="card"><span class="card__icon" aria-hidden="true">${area.code}</span><h3>${area.h1.replace(/^Your local /, '').replace(/^Plumber /, 'Plumbing ')}</h3><p>${area.intro}</p><a class="text-link" href="${href(page, `/areas/${area.slug}/`)}">View area <span aria-hidden="true">→</span></a></article>`).join('')}
+    <div class="section-head"><div><p class="eyebrow">Close to home</p><h2>Our local coverage</h2><p class="section-lead">Based in Dreyersdal, we serve homes and businesses across Cape Town’s Southern Suburbs. Choose an area or send your address to confirm a call-out.</p></div></div>
+    <div class="card-grid">${areas.map((area) => `<article class="card"><span class="card__icon" aria-hidden="true">${area.code}</span><h3>${area.cardTitle}</h3><p>${area.intro}</p><a class="text-link" href="${href(page, `/areas/${area.slug}/`)}">View area <span aria-hidden="true">→</span></a></article>`).join('')}
       <article class="card"><span class="card__icon" aria-hidden="true">?</span><h3>Another Cape Town suburb?</h3><p>Send us your address and the type of plumbing help you need. We will confirm coverage when arranging the call-out.</p><a class="text-link" href="${href(page, '/contact/')}">Check your address <span aria-hidden="true">→</span></a></article>
     </div>
   </div>
