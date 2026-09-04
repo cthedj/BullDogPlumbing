@@ -10,6 +10,7 @@ const requiredFooterLinks = [
   'https://www.tiktok.com/@bulldogplumbingza',
   'https://wa.me/27724558877?text=Hi%20Bulldog%20Plumbing%2C%20I%20need%20help%20with%20a%20plumbing%20job.'
 ];
+const googleReviewLink = 'https://g.page/r/CbLwKrQVqFdLEAI/review';
 
 async function walk(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
@@ -56,6 +57,9 @@ for (const file of htmlFiles) {
   if (html.includes('cdn.tailwindcss.com') || html.includes('unpkg.com')) addError(file, 'contains render-blocking framework CDN');
   for (const requiredLink of requiredFooterLinks) {
     if (!html.includes(`href="${requiredLink}"`)) addError(file, `missing footer link ${requiredLink}`);
+  }
+  if (path.relative(root, file) === 'index.html' && !html.includes(`href="${googleReviewLink}"`)) {
+    addError(file, 'missing verified Google review link');
   }
 
   for (const [value, label, map] of [[title, 'title', titles], [description, 'description', descriptions], [canonical, 'canonical', canonicals]]) {

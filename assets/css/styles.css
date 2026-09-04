@@ -393,26 +393,60 @@ p {
 }
 
 .hero--inner .hero__visual {
-  display: grid;
+  position: relative;
+  overflow: hidden;
+  height: 23rem;
   min-height: 21rem;
-  place-items: center;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-lg);
   background: linear-gradient(145deg, rgba(230, 206, 198, 0.18), rgba(255, 255, 255, 0.03));
+  box-shadow: var(--shadow-lg);
 }
 
-.hero--inner .hero__visual span {
+.hero--inner .hero__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero--inner .hero__photo--contain {
+  object-fit: contain;
+}
+
+.hero--inner .hero__photo-badge {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
   display: grid;
-  width: 11rem;
-  height: 11rem;
+  width: 6.2rem;
+  height: 6.2rem;
   place-items: center;
-  border: 2px solid var(--blush);
+  align-content: center;
+  border: 4px solid var(--ink);
   border-radius: 50%;
-  color: var(--blush);
+  background: var(--blush);
+  color: var(--ink);
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotate(-5deg);
+}
+
+.hero__photo-badge strong {
   font-family: Rockwell, "Arial Black", sans-serif;
-  font-size: 3.25rem;
+  font-size: 1.5rem;
+}
+
+.hero__photo-badge small {
+  margin-top: 0.3rem;
+  font-size: 0.65rem;
   font-weight: 900;
-  letter-spacing: -0.06em;
+  letter-spacing: 0.05em;
+}
+
+.hero--inner.hero--text .hero__grid {
+  max-width: 56rem;
+  grid-template-columns: 1fr;
 }
 
 .trust-strip {
@@ -828,6 +862,32 @@ p {
   gap: 0.75rem;
 }
 
+.section--review {
+  padding-top: 0;
+}
+
+.review-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2rem;
+  border-radius: var(--radius-lg);
+  padding: clamp(2rem, 5vw, 3.5rem);
+  background: var(--ink);
+  color: var(--white);
+}
+
+.review-panel h2 {
+  max-width: 18ch;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.review-panel p:not(.eyebrow) {
+  max-width: 42rem;
+  margin-top: 0.7rem;
+  color: #c9cada;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
@@ -1165,8 +1225,13 @@ p {
     grid-column: auto;
   }
 
-  .cta-panel {
+  .cta-panel,
+  .review-panel {
     grid-template-columns: 1fr;
+  }
+
+  .review-panel .button {
+    justify-self: start;
   }
 
   .footer-bottom {

@@ -12,6 +12,28 @@ const socialProfiles = {
   instagram: 'https://www.instagram.com/bulldog_plumbing_/',
   tiktok: 'https://www.tiktok.com/@bulldogplumbingza'
 };
+const googleProfileHref = 'https://g.page/r/CbLwKrQVqFdLEAI';
+const googleReviewHref = `${googleProfileHref}/review`;
+const heroPhotos = {
+  planning: { image: 'about.jpg', width: 768, height: 960, alt: 'Bulldog Plumbing team member reviewing plans for a plumbing project' },
+  team: { image: 'team.jpg', width: 900, height: 677, alt: 'Three members of the Bulldog Plumbing team', contain: true },
+  installation: { image: 'project-attic-installation.jpg', width: 900, height: 1214, alt: 'Bulldog Plumbing setting out an installation with a laser level' },
+  pipework: { image: 'project-wall-plumbing.jpg', width: 900, height: 1214, alt: 'Concealed plumbing pipework aligned with a laser level' },
+  waterHeater: { image: 'project-water-heater.jpg', width: 900, height: 1214, alt: 'Compact water heater installed with copper pipework' },
+  kitchen: { image: 'project-kitchen-mixer.jpg', width: 900, height: 1214, alt: 'Kitchen mixer and sink installed by Bulldog Plumbing' },
+  drainInspection: { image: 'project-drain-inspection.png', width: 900, height: 1213, alt: 'Bulldog Plumbing inspecting an underground drain' },
+  drainResult: { image: 'project-drain-before-after.jpg', width: 640, height: 640, alt: 'Before and after views of an outside drain cleared by Bulldog Plumbing', contain: true }
+};
+const serviceHeroPhotos = {
+  'emergency-plumber-cape-town': heroPhotos.drainResult,
+  'geyser-repairs-cape-town': heroPhotos.waterHeater,
+  'blocked-drains-cape-town': heroPhotos.drainResult,
+  'leak-detection-cape-town': heroPhotos.pipework,
+  'burst-pipe-repairs-cape-town': heroPhotos.pipework,
+  'sewer-and-drain-repairs-cape-town': heroPhotos.drainInspection,
+  'bathroom-plumbing-cape-town': heroPhotos.pipework,
+  'commercial-plumbing-cape-town': heroPhotos.installation
+};
 const lastModified = '2026-09-04';
 
 const services = [
@@ -304,7 +326,7 @@ function graphFor(page, faqs = [], crumbs = []) {
     logo: `${siteUrl}/assets/img/logo.png`,
     image: `${siteUrl}/assets/img/about.jpg`,
     telephone: '+27-72-455-8877',
-    sameAs: Object.values(socialProfiles),
+    sameAs: [...Object.values(socialProfiles), googleProfileHref],
     address: {
       '@type': 'PostalAddress',
       streetAddress: '7 Winchester Close',
@@ -471,7 +493,7 @@ function footer(page) {
         <ul>
           <li><a href="${phoneHref}">${phoneDisplay}</a></li>
           <li><a href="${whatsappHref}" target="_blank" rel="noopener">WhatsApp Bulldog</a></li>
-          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=7+Winchester+Close+Dreyersdal+Cape+Town" target="_blank" rel="noopener">7 Winchester Close,<br>Dreyersdal, Cape Town</a></li>
+          <li><a href="${googleProfileHref}" target="_blank" rel="noopener noreferrer">7 Winchester Close,<br>Dreyersdal, Cape Town</a></li>
           <li>Open 24/7</li>
         </ul>
       </div>
@@ -503,8 +525,8 @@ function breadcrumb(page, items) {
   return `<ol class="breadcrumb" aria-label="Breadcrumb">${items.map((item, i) => `<li>${i === items.length - 1 ? item.name : `<a href="${href(page, item.path)}">${item.name}</a>`}</li>`).join('')}</ol>`;
 }
 
-function innerHero(page, { eyebrow, h1, intro, code, crumbs }) {
-  return `<section class="hero hero--inner">
+function innerHero(page, { eyebrow, h1, intro, photo, crumbs }) {
+  return `<section class="hero hero--inner${photo ? '' : ' hero--text'}">
   <div class="container hero__grid">
     <div class="hero__copy">
       ${breadcrumb(page, crumbs)}
@@ -516,7 +538,10 @@ function innerHero(page, { eyebrow, h1, intro, code, crumbs }) {
         <a class="button button--whatsapp" href="${whatsappHref}" target="_blank" rel="noopener">${icons.whatsapp} WhatsApp for a quote</a>
       </div>
     </div>
-    <div class="hero__visual" aria-hidden="true"><span>${code}</span></div>
+${photo ? `    <div class="hero__visual">
+      <img class="hero__photo${photo.contain ? ' hero__photo--contain' : ''}" src="${asset(page, `assets/img/${photo.image}`)}" width="${photo.width}" height="${photo.height}" fetchpriority="high" decoding="async" alt="${photo.alt}">
+      <span class="hero__photo-badge" aria-hidden="true"><strong>24/7</strong><small>Cape Town</small></span>
+    </div>` : ''}
   </div>
 </section>`;
 }
@@ -539,6 +564,17 @@ function faqSection(faqs) {
     <h2>Frequently asked questions</h2>
     <div class="faq-list">
       ${faqs.map(([question, answer]) => `<details><summary>${question}</summary><p>${answer}</p></details>`).join('\n      ')}
+    </div>
+  </div>
+</section>`;
+}
+
+function reviewCta() {
+  return `<section class="section section--review" id="google-reviews">
+  <div class="container">
+    <div class="review-panel">
+      <div><p class="eyebrow">Google reviews</p><h2>Used Bulldog recently?</h2><p>Share an honest review to help other Cape Town customers choose their plumber with confidence.</p></div>
+      <a class="button button--light" href="${googleReviewHref}" target="_blank" rel="noopener noreferrer">Leave a Google review <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>`;
@@ -696,6 +732,7 @@ ${projectGallery(page)}
   </div>
 </section>
 ${faqSection(faqs)}
+${reviewCta()}
 ${ctaPanel(page)}
 </main>`
   };
@@ -707,7 +744,7 @@ function servicesBody(page) {
     faqs: [],
     crumbs,
     html: `<main id="main-content">
-${innerHero(page, { eyebrow: 'Residential & commercial', h1: 'Plumbing services in Cape Town', intro: 'Urgent repairs, planned improvements and dependable plumbing support for Cape Town homes and businesses.', code: 'BP', crumbs })}
+${innerHero(page, { eyebrow: 'Residential & commercial', h1: 'Plumbing services in Cape Town', intro: 'Urgent repairs, planned improvements and dependable plumbing support for Cape Town homes and businesses.', photo: heroPhotos.installation, crumbs })}
 ${trustStrip()}
 <section class="section section--warm">
   <div class="container">
@@ -734,7 +771,7 @@ function serviceBody(page) {
     faqs: service.faqs,
     crumbs,
     html: `<main id="main-content">
-${innerHero(page, { eyebrow: 'Cape Town plumbing service', h1: service.h1, intro: service.intro, code: service.code, crumbs })}
+${innerHero(page, { eyebrow: 'Cape Town plumbing service', h1: service.h1, intro: service.intro, photo: serviceHeroPhotos[service.slug], crumbs })}
 ${trustStrip()}
 <section class="section">
   <div class="container details-grid">
@@ -777,7 +814,7 @@ function areasBody(page) {
     faqs: [],
     crumbs,
     html: `<main id="main-content">
-${innerHero(page, { eyebrow: 'Local Cape Town coverage', h1: 'Plumbing service areas', intro: 'Bulldog Plumbing is based in Dreyersdal and serves Cape Town, with a strong focus on the Southern Suburbs. Send your address to confirm availability.', code: 'CT', crumbs })}
+${innerHero(page, { eyebrow: 'Local Cape Town coverage', h1: 'Plumbing service areas', intro: 'Bulldog Plumbing is based in Dreyersdal and serves Cape Town, with a strong focus on the Southern Suburbs. Send your address to confirm availability.', photo: heroPhotos.team, crumbs })}
 ${trustStrip()}
 <section class="section section--warm">
   <div class="container">
@@ -799,7 +836,7 @@ function areaBody(page) {
     faqs: area.faqs,
     crumbs,
     html: `<main id="main-content">
-${innerHero(page, { eyebrow: 'Local plumbing coverage', h1: area.h1, intro: area.intro, code: area.code, crumbs })}
+${innerHero(page, { eyebrow: 'Local plumbing coverage', h1: area.h1, intro: area.intro, photo: area.slug === 'dreyersdal' ? heroPhotos.kitchen : heroPhotos.installation, crumbs })}
 ${trustStrip()}
 <section class="section">
   <div class="container details-grid">
@@ -824,7 +861,7 @@ function aboutBody(page) {
   return {
     faqs: [], crumbs,
     html: `<main id="main-content">
-${innerHero(page, { eyebrow: 'About Bulldog Plumbing', h1: 'Plumbing work built on trust', intro: 'We provide reliable residential and commercial plumbing with honest communication, professional care and the determination to finish the job properly.', code: 'BP', crumbs })}
+${innerHero(page, { eyebrow: 'About Bulldog Plumbing', h1: 'Plumbing work built on trust', intro: 'We provide reliable residential and commercial plumbing with honest communication, professional care and the determination to finish the job properly.', photo: heroPhotos.team, crumbs })}
 <section class="section">
   <div class="container split">
     <div class="split__image"><img src="${asset(page, 'assets/img/team.jpg')}" width="900" height="677" alt="Three members of the Bulldog Plumbing team"></div>
@@ -853,10 +890,10 @@ function contactBody(page) {
   return {
     faqs: [], crumbs,
     html: `<main id="main-content">
-${innerHero(page, { eyebrow: 'Free plumbing quotes', h1: 'Contact Bulldog Plumbing', intro: 'Call for an urgent problem or send the job details on WhatsApp. Include your Cape Town suburb and photos if they are safe to take.', code: '24/7', crumbs })}
+${innerHero(page, { eyebrow: 'Free plumbing quotes', h1: 'Contact Bulldog Plumbing', intro: 'Call for an urgent problem or send the job details on WhatsApp. Include your Cape Town suburb and photos if they are safe to take.', photo: heroPhotos.planning, crumbs })}
 <section class="section section--warm">
   <div class="container contact-grid">
-    <div><p class="eyebrow">Talk to a plumber</p><h2>We’re available 24/7.</h2><p class="section-lead">After-hours and weekends are included at no added cost. For fast-moving water or wastewater, call rather than waiting.</p><div class="contact-links"><a class="contact-link" href="${phoneHref}">${icons.phone} ${phoneDisplay}</a><a class="contact-link" href="${whatsappHref}" target="_blank" rel="noopener">${icons.whatsapp} Message us on WhatsApp</a><a class="contact-link" href="https://www.google.com/maps/search/?api=1&amp;query=7+Winchester+Close+Dreyersdal+Cape+Town" target="_blank" rel="noopener">7 Winchester Close, Dreyersdal, Cape Town, 7945</a></div></div>
+    <div><p class="eyebrow">Talk to a plumber</p><h2>We’re available 24/7.</h2><p class="section-lead">After-hours and weekends are included at no added cost. For fast-moving water or wastewater, call rather than waiting.</p><div class="contact-links"><a class="contact-link" href="${phoneHref}">${icons.phone} ${phoneDisplay}</a><a class="contact-link" href="${whatsappHref}" target="_blank" rel="noopener">${icons.whatsapp} Message us on WhatsApp</a><a class="contact-link" href="${googleProfileHref}" target="_blank" rel="noopener noreferrer">7 Winchester Close, Dreyersdal, Cape Town, 7945</a></div></div>
     ${contactForm()}
   </div>
 </section>
@@ -870,12 +907,12 @@ function privacyBody(page) {
   return {
     faqs: [], crumbs,
     html: `<main id="main-content">
-${innerHero(page, { eyebrow: 'Website information', h1: 'Privacy notice', intro: 'A plain-language explanation of how this website handles information and links to external services.', code: 'PR', crumbs })}
+${innerHero(page, { eyebrow: 'Website information', h1: 'Privacy notice', intro: 'A plain-language explanation of how this website handles information and links to external services.', crumbs })}
 <section class="section"><div class="narrow prose">
   <p>Last updated: 4 September 2026</p>
   <h2>Information you choose to share</h2><p>This website does not submit or store the quote-form details on its own server. When you use the quote form, your browser prepares a WhatsApp message containing the details you entered. You choose whether to send that message in WhatsApp.</p>
   <h2>Phone and WhatsApp</h2><p>Calls and messages are handled through your phone provider or WhatsApp. Their terms and privacy practices apply when you use those services. Bulldog Plumbing uses the information you send to respond to your enquiry, prepare a quote and provide requested plumbing services.</p>
-  <h2>External links</h2><p>The website includes links to WhatsApp, telephone services and Google Maps. Following those links takes you to an external service with its own privacy practices.</p>
+  <h2>External links</h2><p>The website includes links to WhatsApp, telephone services, Google Maps and Bulldog Plumbing social profiles. Following those links takes you to an external service with its own privacy practices.</p>
   <h2>Cookies and analytics</h2><p>The current website does not set advertising cookies or run third-party analytics. If analytics or advertising tools are added later, this notice and any required consent controls should be updated before they go live.</p>
   <h2>Your choices</h2><p>Only share information needed for the plumbing enquiry. Do not use the website or WhatsApp form to send payment-card details, passwords or other highly sensitive information.</p>
   <h2>Contact</h2><p>For questions about information shared with Bulldog Plumbing, call <a href="${phoneHref}">${phoneDisplay}</a>.</p>
