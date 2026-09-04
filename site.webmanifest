@@ -1,0 +1,17 @@
+{
+  "name": "Bulldog Plumbing",
+  "short_name": "Bulldog",
+  "description": "24/7 plumbing services in Cape Town.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fffdfb",
+  "theme_color": "#080b2c",
+  "icons": [
+    {
+      "src": "assets/img/logo.png",
+      "sizes": "340x340",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

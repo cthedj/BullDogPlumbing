@@ -1,0 +1,14 @@
+{
+  "name": "bulldog-plumbing",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Fast, accessible static website for Bulldog Plumbing Cape Town.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/validate.mjs",
+    "check": "npm run build && npm test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
