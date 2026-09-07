@@ -53,6 +53,8 @@ for (const file of htmlFiles) {
   if (!canonical.startsWith('https://bulldogplumbing.co.za/')) addError(file, 'invalid canonical URL');
   if (h1Count !== 1) addError(file, `expected one H1, found ${h1Count}`);
   if (!html.includes('application/ld+json')) addError(file, 'missing JSON-LD');
+  if (html.includes('24/7')) addError(file, 'contains outdated 24/7 availability claim');
+  if (!html.includes('"opens":"08:00"') || !html.includes('"closes":"18:00"')) addError(file, 'missing correct weekday business hours in JSON-LD');
   if (html.includes('+27.724') || html.includes('724ù')) addError(file, 'contains malformed phone number');
   if (html.includes('cdn.tailwindcss.com') || html.includes('unpkg.com')) addError(file, 'contains render-blocking framework CDN');
   for (const requiredLink of requiredFooterLinks) {

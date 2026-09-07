@@ -34,17 +34,17 @@ const serviceHeroPhotos = {
   'bathroom-plumbing-cape-town': heroPhotos.pipework,
   'commercial-plumbing-cape-town': heroPhotos.installation
 };
-const lastModified = '2026-09-04';
+const lastModified = '2026-09-07';
 
 const services = [
   {
     slug: 'emergency-plumber-cape-town',
     short: 'Emergency plumbing',
-    code: '24/7',
-    title: 'Emergency Plumber Cape Town | 24/7 Help | Bulldog',
-    description: 'Need an emergency plumber in Cape Town? Call Bulldog Plumbing 24/7 for urgent leaks, burst pipes, blocked drains and geyser problems. Free quotes.',
+    code: 'SOS',
+    title: 'Emergency Plumber Cape Town | After-Hours Help | Bulldog',
+    description: 'Need an emergency plumber in Cape Town? Bulldog Plumbing offers urgent after-hours and weekend call-outs for leaks, burst pipes, drains and geyser problems.',
     h1: 'Emergency plumber in Cape Town',
-    intro: 'A plumbing emergency can damage floors, walls and fittings quickly. Bulldog Plumbing is available 24/7 for urgent residential and commercial call-outs across Cape Town, including after-hours and weekends at no added after-hours cost.',
+    intro: 'A plumbing emergency can damage floors, walls and fittings quickly. Bulldog Plumbing provides urgent residential and commercial call-outs across Cape Town, including emergency after-hours and weekend work by arrangement.',
     helps: ['Burst or leaking pipes', 'Overflowing or blocked drains', 'Leaking geysers and valves', 'Loss of water from a plumbing fault', 'Urgent toilet or tap failures', 'Sewer smells, gurgling or backups'],
     process: [
       ['Call or WhatsApp', 'Tell us what is happening, where you are and whether water is still flowing. Photos help us understand the job.'],
@@ -54,7 +54,7 @@ const services = [
     guidanceTitle: 'What to do while you wait',
     guidance: '<p>If water is escaping rapidly, close the property’s main water shut-off valve if it is safe and accessible. Keep people away from wet electrical fittings and switch off power at the distribution board only if you can do so safely. Move valuables away from the affected area and take a few clear photos for the plumber.</p><p>Do not open a geyser casing, cut into a wall or use harsh drain chemicals during an emergency. These steps can create additional hazards and make the underlying fault harder to assess.</p>',
     faqs: [
-      ['Is Bulldog Plumbing available after hours?', 'Yes. Bulldog Plumbing offers 24/7 service, including weekends and after-hours, with no added after-hours surcharge. Call or WhatsApp to arrange assistance.'],
+      ['Is Bulldog Plumbing available after hours?', 'Emergency call-outs are available after 6pm and on weekends by arrangement. Call or WhatsApp with the problem and your location so availability can be confirmed.'],
       ['What information should I send on WhatsApp?', 'Send your name, suburb, a short description of the problem and clear photos or a brief video if safe. This helps us understand the urgency and prepare for the call-out.'],
       ['Should I turn off my water before the plumber arrives?', 'For a fast-moving leak or burst pipe, isolating the main water supply can limit damage if the valve is safe to reach. If electrical fittings are wet or you are unsure, keep clear and call for guidance.']
     ],
@@ -88,7 +88,7 @@ const services = [
     short: 'Blocked drains',
     code: 'DR',
     title: 'Blocked Drains Cape Town | Bulldog Plumbing',
-    description: 'Blocked drain plumber in Cape Town for slow sinks, overflowing drains, gurgling toilets and recurring blockages. Contact Bulldog Plumbing 24/7.',
+    description: 'Blocked drain plumber in Cape Town for slow sinks, overflowing drains, gurgling toilets and recurring blockages. Emergency call-outs are available.',
     h1: 'Blocked drain plumber in Cape Town',
     intro: 'Slow water, bad smells and gurgling pipes are often early warnings of a drain problem. Bulldog Plumbing finds the affected section, clears the obstruction where possible and checks for signs of a deeper drainage or sewer issue.',
     helps: ['Blocked sinks and basins', 'Slow showers and baths', 'Overflowing outside drains', 'Gurgling or slow toilets', 'Recurring household blockages', 'Suspected sewer-line problems'],
@@ -133,10 +133,10 @@ const services = [
     slug: 'burst-pipe-repairs-cape-town',
     short: 'Burst pipe repairs',
     code: 'BP',
-    title: 'Burst Pipe Repairs Cape Town | 24/7 Bulldog Plumbing',
-    description: 'Fast burst pipe repairs in Cape Town. Bulldog Plumbing offers 24/7 help for leaking and damaged water pipes, including after-hours at no extra cost.',
+    title: 'Burst Pipe Repairs Cape Town | Emergency Help | Bulldog',
+    description: 'Fast burst pipe repairs in Cape Town. Bulldog Plumbing offers emergency after-hours and weekend call-outs for leaking and damaged water pipes.',
     h1: 'Burst pipe repairs in Cape Town',
-    intro: 'A burst or split pipe needs fast attention. Bulldog Plumbing provides 24/7 help to isolate the problem, assess the damaged section and complete a durable repair for residential and commercial plumbing systems.',
+    intro: 'A burst or split pipe needs fast attention. Bulldog Plumbing provides emergency help to isolate the problem, assess the damaged section and complete a durable repair for residential and commercial plumbing systems.',
     helps: ['Sudden high-volume leaks', 'Split or cracked water pipes', 'Damaged exposed pipework', 'Leaking joints and fittings', 'Pressure-related pipe failures', 'Water supply pipe repairs'],
     process: [
       ['Control the water', 'If safe, isolate the main supply and move belongings away from the leak while you contact us.'],
@@ -146,7 +146,7 @@ const services = [
     guidanceTitle: 'Reduce damage from a burst pipe',
     guidance: '<p>Close the main water supply if the valve is safe to reach. Open a cold tap briefly to relieve pressure after the supply is off. Keep away from wet electrical points and do not touch the distribution board if the area around it is wet.</p><p>Photograph visible damage for your records, but do not delay an emergency call-out to document everything.</p>',
     faqs: [
-      ['Who do I call for a burst pipe in Cape Town?', `Call Bulldog Plumbing on ${phoneDisplay} or send a WhatsApp message. The service is available 24/7 for urgent plumbing faults.`],
+      ['Who do I call for a burst pipe in Cape Town?', `Call Bulldog Plumbing on ${phoneDisplay} or send a WhatsApp message. Emergency after-hours and weekend call-outs are available by arrangement.`],
       ['Can I temporarily tape a burst pipe?', 'Tape is not a reliable repair for a pressurised water pipe. Isolating the water is safer until the damaged section can be assessed and repaired properly.'],
       ['What causes pipes to burst?', 'Causes vary and can include corrosion, damaged fittings, excessive pressure, movement, impact or deterioration. The failed section should be inspected rather than assuming a cause.']
     ],
@@ -194,7 +194,7 @@ const services = [
     faqs: [
       ['What types of commercial properties do you help?', 'Bulldog Plumbing can assess plumbing work for offices, shops and other business or managed properties. Send the address and scope so the job can be confirmed.'],
       ['Can work be arranged around business operations?', 'Share your operating hours and access constraints when requesting the quote. The practical work plan can then account for site access and likely disruption.'],
-      ['Do you provide urgent commercial call-outs?', 'Yes. Bulldog Plumbing offers 24/7 plumbing service. Explain the operational impact and whether water is still flowing when you call.']
+      ['Do you provide urgent commercial call-outs?', 'Yes. Emergency after-hours and weekend call-outs are available by arrangement. Explain the operational impact and whether water is still flowing when you call.']
     ],
     related: ['emergency-plumber-cape-town', 'sewer-and-drain-repairs-cape-town', 'bathroom-plumbing-cape-town']
   },
@@ -229,14 +229,14 @@ const areas = [
     cardTitle: 'Southern Suburbs plumbing',
     code: 'SS',
     title: 'Plumber Southern Suburbs Cape Town | Bulldog Plumbing',
-    description: 'Local plumber serving Cape Town’s Southern Suburbs from Dreyersdal. 24/7 repairs, geysers, blocked drains, leak detection and free quotes.',
+    description: 'Local plumber serving Cape Town’s Southern Suburbs from Dreyersdal. Weekday plumbing, emergency call-outs, geysers, drains and leak detection.',
     h1: 'Plumber in Cape Town’s Southern Suburbs',
     intro: 'Based in Dreyersdal, Bulldog Plumbing provides residential and commercial plumbing call-outs across the Southern Suburbs. Contact us with your address and plumbing problem so we can confirm coverage and arrange the right help.',
     places: ['Dreyersdal', 'Bergvliet', 'Tokai', 'Constantia', 'Wynberg', 'Claremont', 'Plumstead', 'Diep River', 'Retreat', 'Steenberg'],
     body: '<p>Southern Suburbs properties range from older homes with ageing pipework to apartment blocks, renovated bathrooms and busy commercial spaces. That variety means the right repair starts with a careful assessment rather than a one-size-fits-all answer.</p><p>Bulldog Plumbing handles urgent leaks, geyser-related plumbing, blocked drains, sewer work, pipe repairs and planned installations. The team communicates clearly from the first call and offers free quotes.</p>',
     faqs: [
       ['Which Southern Suburbs do you cover?', 'Bulldog Plumbing is based in Dreyersdal and serves nearby Southern Suburbs including Bergvliet, Tokai, Constantia, Wynberg, Claremont, Plumstead, Diep River, Retreat and Steenberg. Confirm availability for your address when booking.'],
-      ['Do you charge extra for an after-hours call?', 'Bulldog Plumbing advertises 24/7 service with no added after-hours cost. Contact the team with your location and problem for a quote.'],
+      ['Can I arrange an after-hours call-out?', 'Emergency call-outs are available after 6pm and on weekends by arrangement. Contact the team with your location and problem so availability and the quote can be confirmed.'],
       ['Can I send photos before the call-out?', 'Yes. Photos or a brief video can help the team understand the visible symptoms and prepare for the visit. Do not enter an unsafe or flooded area to take them.']
     ]
   },
@@ -244,28 +244,28 @@ const areas = [
     slug: 'dreyersdal',
     cardTitle: 'Plumber in Dreyersdal',
     code: 'DY',
-    title: 'Plumber Dreyersdal | 24/7 Bulldog Plumbing',
-    description: 'Need a plumber in Dreyersdal? Bulldog Plumbing is locally based and available 24/7 for repairs, blocked drains, geysers and plumbing installations.',
+    title: 'Plumber Dreyersdal | Emergency Call-Outs | Bulldog',
+    description: 'Need a plumber in Dreyersdal? Bulldog Plumbing is locally based for weekday repairs, blocked drains, geysers, installations and emergency call-outs.',
     h1: 'Your local plumber in Dreyersdal',
-    intro: 'Bulldog Plumbing is based in Dreyersdal, Cape Town. Local homeowners and businesses can call for everyday repairs, planned plumbing work and urgent 24/7 assistance.',
+    intro: 'Bulldog Plumbing is based in Dreyersdal, Cape Town. Local homeowners and businesses can call for weekday repairs, planned plumbing work and emergency assistance outside regular hours by arrangement.',
     places: ['Dreyersdal', 'Bergvliet', 'Tokai', 'Diep River', 'Retreat', 'Steenberg'],
     body: '<p>Having a plumber based nearby makes it easier to explain local access, property type and the urgency of a fault. Tell us what you can see, whether the water has been isolated and which part of the property is affected.</p><p>We help with burst and leaking pipes, geyser-related plumbing, blocked drains, hidden leaks, sewer problems, bathroom plumbing and commercial work. Free quotes are available.</p>',
     faqs: [
       ['Where is Bulldog Plumbing based?', 'Bulldog Plumbing is based at 7 Winchester Close, Dreyersdal, Cape Town, 7945. Call before visiting so the team can confirm availability.'],
-      ['Do you offer emergency plumbing in Dreyersdal?', 'Yes. Bulldog Plumbing is available 24/7 for urgent plumbing issues, including after-hours and weekends at no added after-hours cost.'],
+      ['Do you offer emergency plumbing in Dreyersdal?', 'Yes. Emergency after-hours and weekend call-outs are available by arrangement. Call with the problem and address so availability can be confirmed.'],
       ['What services can I book locally?', 'Services include leak and pipe repairs, geyser-related plumbing, blocked drains, sewer work, bathroom plumbing and commercial plumbing.']
     ]
   }
 ];
 
 const pages = [
-  { path: '/', output: 'index.html', kind: 'home', title: 'Plumber Cape Town | 24/7 Service | Bulldog Plumbing', description: 'Need a reliable plumber in Cape Town? Bulldog Plumbing offers 24/7 repairs, geyser services, blocked drains, burst pipe repairs and free quotes.' },
-  { path: '/services/', output: 'services/index.html', kind: 'services', title: 'Plumbing Services Cape Town | Bulldog Plumbing', description: 'Explore Bulldog Plumbing’s Cape Town services: 24/7 emergency plumbing, geyser repairs, blocked drains, leak detection, pipe and sewer repairs.' },
+  { path: '/', output: 'index.html', kind: 'home', title: 'Plumber Cape Town | Emergency Call-Outs | Bulldog Plumbing', description: 'Reliable Cape Town plumber open Monday to Friday, 8am–6pm. Emergency after-hours and weekend call-outs, repairs, geysers, drains and free quotes.' },
+  { path: '/services/', output: 'services/index.html', kind: 'services', title: 'Plumbing Services Cape Town | Bulldog Plumbing', description: 'Explore Bulldog Plumbing’s Cape Town services: emergency call-outs, geyser repairs, blocked drains, leak detection, pipe and sewer repairs.' },
   ...services.map((service) => ({ path: `/services/${service.slug}/`, output: `services/${service.slug}/index.html`, kind: 'service', title: service.title, description: service.description, data: service })),
   { path: '/areas/', output: 'areas/index.html', kind: 'areas', title: 'Cape Town Plumbing Service Areas | Bulldog Plumbing', description: 'Bulldog Plumbing serves Cape Town from Dreyersdal, with local coverage across the Southern Suburbs. Check service areas and request a free quote.' },
   ...areas.map((area) => ({ path: `/areas/${area.slug}/`, output: `areas/${area.slug}/index.html`, kind: 'area', title: area.title, description: area.description, data: area })),
   { path: '/about/', output: 'about/index.html', kind: 'about', title: 'About Bulldog Plumbing | Cape Town Plumbers', description: 'Meet Bulldog Plumbing, a Cape Town plumbing team focused on honest communication, professional workmanship and lasting residential and commercial solutions.' },
-  { path: '/contact/', output: 'contact/index.html', kind: 'contact', title: 'Contact Bulldog Plumbing | Free Cape Town Quote', description: `Call ${phoneDisplay} or WhatsApp Bulldog Plumbing for a free Cape Town plumbing quote. Available 24/7, including weekends and after-hours.` },
+  { path: '/contact/', output: 'contact/index.html', kind: 'contact', title: 'Contact Bulldog Plumbing | Free Cape Town Quote', description: `Call ${phoneDisplay} or WhatsApp Bulldog Plumbing. Open weekdays 8am–6pm, with emergency after-hours and weekend call-outs by arrangement.` },
   { path: '/privacy/', output: 'privacy/index.html', kind: 'privacy', title: 'Privacy Notice | Bulldog Plumbing', description: 'Read the Bulldog Plumbing website privacy notice, including how WhatsApp quote requests and external links work.' }
 ];
 
@@ -339,11 +339,18 @@ function graphFor(page, faqs = [], crumbs = []) {
       { '@type': 'City', name: 'Cape Town' },
       { '@type': 'AdministrativeArea', name: 'Southern Suburbs, Cape Town' }
     ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+27-72-455-8877',
+      contactType: 'emergency service',
+      areaServed: 'ZA',
+      availableLanguage: 'English'
+    },
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '00:00',
-      closes: '23:59'
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '18:00'
     }
   };
   const webPage = {
@@ -440,7 +447,7 @@ function header(page) {
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <div class="topbar">
   <div class="container topbar__inner">
-    <p>24/7 service · After-hours & weekends at no added cost</p>
+    <p>Mon–Fri 08:00–18:00 · Emergency call-outs after hours & weekends</p>
     <a href="${phoneHref}">${phoneDisplay}</a>
   </div>
 </div>
@@ -468,7 +475,7 @@ function footer(page) {
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="${asset(page, 'assets/img/logo.png')}" width="340" height="340" loading="lazy" alt="Bulldog Plumbing">
-        <p>Reliable residential and commercial plumbing across Cape Town, with 24/7 service and clear communication from first call to final check.</p>
+        <p>Reliable residential and commercial plumbing across Cape Town, open weekdays with emergency call-outs available after hours and on weekends.</p>
       </div>
       <div class="footer-col">
         <h2>Popular services</h2>
@@ -494,7 +501,9 @@ function footer(page) {
           <li><a href="${phoneHref}">${phoneDisplay}</a></li>
           <li><a href="${whatsappHref}" target="_blank" rel="noopener">WhatsApp Bulldog</a></li>
           <li><a href="${googleProfileHref}" target="_blank" rel="noopener noreferrer">7 Winchester Close,<br>Dreyersdal, Cape Town</a></li>
-          <li>Open 24/7</li>
+          <li>Mon–Fri: 08:00–18:00</li>
+          <li>Closed weekends</li>
+          <li>Emergency call-outs available</li>
         </ul>
       </div>
     </div>
@@ -540,7 +549,7 @@ function innerHero(page, { eyebrow, h1, intro, photo, crumbs }) {
     </div>
 ${photo ? `    <div class="hero__visual">
       <img class="hero__photo${photo.contain ? ' hero__photo--contain' : ''}" src="${asset(page, `assets/img/${photo.image}`)}" width="${photo.width}" height="${photo.height}" fetchpriority="high" decoding="async" alt="${photo.alt}">
-      <span class="hero__photo-badge" aria-hidden="true"><strong>24/7</strong><small>Cape Town</small></span>
+      <span class="hero__photo-badge" aria-hidden="true"><strong>8–6</strong><small>Mon–Fri</small></span>
     </div>` : ''}
   </div>
 </section>`;
@@ -549,9 +558,9 @@ ${photo ? `    <div class="hero__visual">
 function trustStrip() {
   return `<div class="trust-strip">
   <div class="container trust-strip__grid">
-    <div class="trust-item">24/7 service</div>
+    <div class="trust-item">Mon–Fri · 8am–6pm</div>
     <div class="trust-item">Free quotes</div>
-    <div class="trust-item">No added after-hours cost</div>
+    <div class="trust-item">Emergency call-outs</div>
     <div class="trust-item">Homes & businesses</div>
   </div>
 </div>`;
@@ -654,7 +663,7 @@ function projectGallery(page) {
 
 function homeBody(page) {
   const faqs = [
-    ['Is Bulldog Plumbing available 24/7?', 'Yes. Bulldog Plumbing offers 24/7 plumbing service in Cape Town, including weekends and after-hours at no added after-hours cost.'],
+    ['What are Bulldog Plumbing’s working hours?', 'Regular working hours are Monday to Friday from 8am to 6pm. The business is closed for routine work on weekends, but emergency after-hours and weekend call-outs are available by arrangement.'],
     ['Which plumbing services do you provide?', 'Services include emergency plumbing, geyser repairs, burst pipes, blocked drains, leak detection, sewer and drain work, bathroom plumbing and commercial plumbing.'],
     ['Do you offer free plumbing quotes?', 'Yes. Call or send the job details and photos on WhatsApp to request a free quote. Some work may require an on-site assessment before the scope can be confirmed.'],
     ['Which areas do you serve?', 'Bulldog Plumbing is based in Dreyersdal and serves Cape Town, with a strong local focus on the Southern Suburbs. Contact the team to confirm coverage for your address.']
@@ -666,8 +675,8 @@ function homeBody(page) {
 <section class="hero">
   <div class="container hero__grid">
     <div class="hero__copy">
-      <p class="eyebrow">Cape Town · Available 24/7</p>
-      <h1>24/7 plumber in Cape Town</h1>
+      <p class="eyebrow">Cape Town · Mon–Fri 8am–6pm</p>
+      <h1>Reliable plumber in Cape Town</h1>
       <p class="lead">Reliable plumbing repairs, geyser services, blocked drains, leak detection and installations for Cape Town homes and businesses—with clear communication and free quotes.</p>
       <div class="button-row">
         <a class="button button--light" href="${phoneHref}">${icons.phone} Call ${phoneDisplay}</a>
@@ -676,7 +685,7 @@ function homeBody(page) {
     </div>
     <div class="hero__image-wrap">
       <img class="hero__image" src="${asset(page, 'assets/img/about.jpg')}" width="768" height="960" fetchpriority="high" alt="Plumber reviewing plans for a Cape Town plumbing job">
-      <div class="hero__badge">24/7 service<br>no added<br>after-hours cost</div>
+      <div class="hero__badge">Emergency<br>call-outs<br>after hours</div>
     </div>
   </div>
 </section>
@@ -712,7 +721,7 @@ ${projectGallery(page)}
       <h2>Honest work. Clear updates. Lasting solutions.</h2>
       <p class="section-lead">Plumbing problems are stressful enough. Our job is to explain what is happening, keep you informed and complete the work with care.</p>
       <ul class="check-list">
-        <li>Residential plumbing</li><li>Commercial plumbing</li><li>Free quotes</li><li>24/7 availability</li><li>After-hours included</li><li>Cape Town based</li>
+        <li>Residential plumbing</li><li>Commercial plumbing</li><li>Free quotes</li><li>Weekday service</li><li>Emergency call-outs</li><li>Cape Town based</li>
       </ul>
       <div class="button-row"><a class="button" href="${href(page, '/about/')}">Meet Bulldog Plumbing</a></div>
     </div>
@@ -865,7 +874,7 @@ ${innerHero(page, { eyebrow: 'About Bulldog Plumbing', h1: 'Plumbing work built 
 <section class="section">
   <div class="container split">
     <div class="split__image"><img src="${asset(page, 'assets/img/team.jpg')}" width="900" height="677" alt="Three members of the Bulldog Plumbing team"></div>
-    <div><p class="eyebrow">Our mission</p><h2>Keep homes and businesses running smoothly.</h2><p class="section-lead">From a leaking tap to a complex sewer problem, the principle is the same: understand the fault, explain the work and deliver a lasting solution.</p><p>Bulldog Plumbing serves residential and commercial customers from Dreyersdal across Cape Town. Clear updates matter throughout every job, because customers should know what is happening in their property.</p><ul class="check-list"><li>Honest communication</li><li>Practical solutions</li><li>Careful workmanship</li><li>24/7 availability</li></ul></div>
+    <div><p class="eyebrow">Our mission</p><h2>Keep homes and businesses running smoothly.</h2><p class="section-lead">From a leaking tap to a complex sewer problem, the principle is the same: understand the fault, explain the work and deliver a lasting solution.</p><p>Bulldog Plumbing serves residential and commercial customers from Dreyersdal across Cape Town. Clear updates matter throughout every job, because customers should know what is happening in their property.</p><ul class="check-list"><li>Honest communication</li><li>Practical solutions</li><li>Careful workmanship</li><li>Emergency call-outs</li></ul></div>
   </div>
 </section>
 <section class="section section--ink"><div class="container"><div class="section-head"><div><p class="eyebrow">What matters</p><h2>The Bulldog approach</h2></div></div><div class="steps"><article class="step"><h3>Listen first</h3><p>The visible symptom is only the start. We ask questions and inspect before deciding on the repair.</p></article><article class="step"><h3>Explain clearly</h3><p>We describe what we find and the practical next step without burying the answer in jargon.</p></article><article class="step"><h3>Finish properly</h3><p>The goal is dependable plumbing and a customer who understands the work that was completed.</p></article></div></div></section>
@@ -893,7 +902,7 @@ function contactBody(page) {
 ${innerHero(page, { eyebrow: 'Free plumbing quotes', h1: 'Contact Bulldog Plumbing', intro: 'Call for an urgent problem or send the job details on WhatsApp. Include your Cape Town suburb and photos if they are safe to take.', photo: heroPhotos.planning, crumbs })}
 <section class="section section--warm">
   <div class="container contact-grid">
-    <div><p class="eyebrow">Talk to a plumber</p><h2>We’re available 24/7.</h2><p class="section-lead">After-hours and weekends are included at no added cost. For fast-moving water or wastewater, call rather than waiting.</p><div class="contact-links"><a class="contact-link" href="${phoneHref}">${icons.phone} ${phoneDisplay}</a><a class="contact-link" href="${whatsappHref}" target="_blank" rel="noopener">${icons.whatsapp} Message us on WhatsApp</a><a class="contact-link" href="${googleProfileHref}" target="_blank" rel="noopener noreferrer">7 Winchester Close, Dreyersdal, Cape Town, 7945</a></div></div>
+    <div><p class="eyebrow">Talk to a plumber</p><h2>Open weekdays, 8am–6pm.</h2><p class="section-lead">We are closed for routine work on weekends. Emergency after-hours and weekend call-outs are available by arrangement—call to confirm assistance.</p><div class="contact-links"><a class="contact-link" href="${phoneHref}">${icons.phone} ${phoneDisplay}</a><a class="contact-link" href="${whatsappHref}" target="_blank" rel="noopener">${icons.whatsapp} Message us on WhatsApp</a><a class="contact-link" href="${googleProfileHref}" target="_blank" rel="noopener noreferrer">7 Winchester Close, Dreyersdal, Cape Town, 7945</a></div></div>
     ${contactForm()}
   </div>
 </section>
@@ -950,7 +959,7 @@ const notFoundGraph = graphFor(notFoundPage);
 await write('404.html', `${head(notFoundPage, notFoundGraph)}
 ${header(notFoundPage)}
 <main id="main-content">
-  <section class="hero hero--inner"><div class="container hero__grid"><div class="hero__copy"><p class="eyebrow">404 · Page not found</p><h1>That page has gone down the drain.</h1><p class="lead">The link may be old or the address may have been typed incorrectly.</p><div class="button-row"><a class="button button--light" href="${href(notFoundPage, '/')}">Back to home</a><a class="button button--whatsapp" href="${whatsappHref}" target="_blank" rel="noopener">${icons.whatsapp} Contact Bulldog</a></div></div><div class="hero__visual" aria-hidden="true"><span>404</span></div></div></section>
+  <section class="hero hero--inner hero--text"><div class="container hero__grid"><div class="hero__copy"><p class="eyebrow">404 · Page not found</p><h1>That page has gone down the drain.</h1><p class="lead">The link may be old or the address may have been typed incorrectly.</p><div class="button-row"><a class="button button--light" href="${href(notFoundPage, '/')}">Back to home</a><a class="button button--whatsapp" href="${whatsappHref}" target="_blank" rel="noopener">${icons.whatsapp} Contact Bulldog</a></div></div></div></section>
 </main>
 ${footer(notFoundPage)}`);
 
@@ -969,7 +978,7 @@ ${pages.map((page) => `  <url><loc>${canonical(page.path)}</loc><lastmod>${lastM
 await write('site.webmanifest', JSON.stringify({
   name: 'Bulldog Plumbing',
   short_name: 'Bulldog',
-  description: '24/7 plumbing services in Cape Town.',
+  description: 'Cape Town plumbing services with weekday hours and emergency after-hours call-outs.',
   start_url: './',
   display: 'standalone',
   background_color: '#fffdfb',

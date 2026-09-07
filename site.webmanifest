@@ -1,7 +1,7 @@
 {
   "name": "Bulldog Plumbing",
   "short_name": "Bulldog",
-  "description": "24/7 plumbing services in Cape Town.",
+  "description": "Cape Town plumbing services with weekday hours and emergency after-hours call-outs.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#fffdfb",
