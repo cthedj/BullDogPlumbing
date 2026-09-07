@@ -626,14 +626,6 @@ p {
   display: block;
 }
 
-.project-slide__number {
-  margin-bottom: auto;
-  color: var(--blush);
-  font-family: Rockwell, "Arial Black", sans-serif;
-  font-size: 0.82rem;
-  letter-spacing: 0.1em;
-}
-
 .project-slide figcaption strong {
   max-width: 12ch;
   font-family: Rockwell, "Arial Black", sans-serif;
@@ -647,30 +639,20 @@ p {
   color: #c9cada;
 }
 
-.project-carousel__toolbar {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
+.project-carousel__nav {
+  display: flex;
   align-items: center;
-  gap: 1.25rem;
-  padding: 1rem 1.25rem;
+  justify-content: center;
+  padding: 1.15rem 1.25rem;
 }
 
-.project-carousel__status {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.84rem;
-  font-weight: 800;
-}
-
-.project-carousel__dots,
-.project-carousel__controls {
+.project-carousel__dots {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.project-carousel__dots button,
-.project-carousel__controls button {
+.project-carousel__dots button {
   border: 0;
   background: transparent;
   color: var(--ink);
@@ -683,38 +665,16 @@ p {
   border: 1px solid var(--ink);
   border-radius: 50%;
   padding: 0;
+  transition: transform 160ms ease, background 160ms ease;
 }
 
 .project-carousel__dots button[aria-current="true"] {
   background: var(--ink);
+  transform: scale(1.18);
 }
 
-.project-carousel__controls button {
-  display: grid;
-  min-width: 2.65rem;
-  min-height: 2.65rem;
-  place-items: center;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 900;
-}
-
-.project-carousel__controls button:hover {
-  border-color: var(--ink);
-  background: var(--warm);
-}
-
-.project-carousel__controls [data-carousel-toggle] {
-  min-width: 4.7rem;
-  padding-inline: 0.9rem;
-}
-
-.project-carousel__timing {
-  margin: 0;
-  padding: 0 1.25rem 1rem;
-  color: var(--muted);
-  font-size: 0.76rem;
+.project-carousel__dots button:hover {
+  transform: scale(1.18);
 }
 
 @keyframes project-slide-in {
@@ -1446,19 +1406,6 @@ p {
     padding: 1.5rem;
   }
 
-  .project-slide__number {
-    margin-bottom: 2.5rem;
-  }
-
-  .project-carousel__toolbar {
-    grid-template-columns: 1fr auto;
-    gap: 0.8rem;
-  }
-
-  .project-carousel__status {
-    grid-column: 1 / -1;
-  }
-
   .project-carousel__dots {
     flex-wrap: nowrap;
     gap: 0.4rem;
@@ -1467,19 +1414,6 @@ p {
   .project-carousel__dots button {
     width: 0.62rem;
     height: 0.62rem;
-  }
-
-  .project-carousel__controls {
-    gap: 0.35rem;
-  }
-
-  .project-carousel__controls button {
-    min-width: 2.45rem;
-    min-height: 2.45rem;
-  }
-
-  .project-carousel__controls [data-carousel-toggle] {
-    min-width: 4.2rem;
   }
 
   .footer-connect {

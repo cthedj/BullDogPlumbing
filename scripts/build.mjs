@@ -14,7 +14,7 @@ const socialProfiles = {
 };
 const googleProfileHref = 'https://g.page/r/CbLwKrQVqFdLEAI';
 const googleReviewHref = `${googleProfileHref}/review`;
-const assetVersion = '20260907-social-carousel-2';
+const assetVersion = '20260907-social-carousel-3';
 const heroPhotos = {
   planning: { image: 'about.jpg', width: 768, height: 960, alt: 'Bulldog Plumbing team member reviewing plans for a plumbing project' },
   team: { image: 'team.jpg', width: 900, height: 677, alt: 'Three members of the Bulldog Plumbing team', contain: true },
@@ -669,21 +669,14 @@ function projectGallery(page) {
       <div class="project-carousel__stage">
         ${projects.map((project, index) => `<figure class="project-slide${index === 0 ? ' is-active' : ''}${project.source ? ' project-slide--social' : ''}" data-carousel-slide aria-roledescription="slide" aria-label="${index + 1} of ${projects.length}: ${project.title}" aria-hidden="${index === 0 ? 'false' : 'true'}">
           <div class="project-slide__media">${project.source ? `<a href="${project.source}" target="_blank" rel="noopener noreferrer" aria-label="View ${project.title} on Instagram">` : ''}<img src="${asset(page, `assets/img/${project.image}`)}" width="${project.width}" height="${project.height}" loading="lazy" decoding="async" alt="${project.description}">${project.source ? '</a>' : ''}</div>
-          <figcaption><span class="project-slide__number">${String(index + 1).padStart(2, '0')} / ${String(projects.length).padStart(2, '0')}</span><strong>${project.title}</strong><span>${project.description}${project.source ? ' View the original post on Instagram.' : ''}</span></figcaption>
+          <figcaption><strong>${project.title}</strong><span>${project.description}${project.source ? ' View the original post on Instagram.' : ''}</span></figcaption>
         </figure>`).join('\n        ')}
       </div>
-      <div class="project-carousel__toolbar">
-        <p class="project-carousel__status" data-carousel-status>Showing 1 of ${projects.length}: ${projects[0].title}</p>
+      <div class="project-carousel__nav">
         <div class="project-carousel__dots" aria-label="Choose a project photograph">
           ${projects.map((project, index) => `<button type="button" data-carousel-dot="${index}" aria-label="Show ${project.title}" aria-current="${index === 0 ? 'true' : 'false'}"></button>`).join('')}
         </div>
-        <div class="project-carousel__controls">
-          <button type="button" data-carousel-prev aria-label="Show previous project photograph"><span aria-hidden="true">←</span></button>
-          <button type="button" data-carousel-toggle aria-label="Pause slideshow">Pause</button>
-          <button type="button" data-carousel-next aria-label="Show next project photograph"><span aria-hidden="true">→</span></button>
-        </div>
       </div>
-      <p class="project-carousel__timing">Slides advance every 7 seconds. Use the controls to browse at your own pace.</p>
     </div>
   </div>
 </section>`;

@@ -66,6 +66,9 @@ for (const file of htmlFiles) {
     const slideCount = (html.match(/data-carousel-slide/g) || []).length;
     if (!html.includes('data-carousel data-interval="7000"')) addError(file, 'missing seven-second project carousel');
     if (slideCount !== 6) addError(file, `expected six project carousel slides, found ${slideCount}`);
+    for (const unwantedControl of ['data-carousel-status', 'data-carousel-prev', 'data-carousel-toggle', 'data-carousel-next', 'Slides advance every']) {
+      if (html.includes(unwantedControl)) addError(file, `contains removed carousel control ${unwantedControl}`);
+    }
   }
 
   for (const [value, label, map] of [[title, 'title', titles], [description, 'description', descriptions], [canonical, 'canonical', canonicals]]) {
