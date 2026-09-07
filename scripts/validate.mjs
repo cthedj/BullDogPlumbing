@@ -60,8 +60,12 @@ for (const file of htmlFiles) {
   for (const requiredLink of requiredFooterLinks) {
     if (!html.includes(`href="${requiredLink}"`)) addError(file, `missing footer link ${requiredLink}`);
   }
-  if (path.relative(root, file) === 'index.html' && !html.includes(`href="${googleReviewLink}"`)) {
-    addError(file, 'missing verified Google review link');
+  if (!html.includes('class="footer-connect"')) addError(file, 'missing visible social and review panel');
+  if (!html.includes(`href="${googleReviewLink}"`)) addError(file, 'missing verified Google review link');
+  if (path.relative(root, file) === 'index.html') {
+    const slideCount = (html.match(/data-carousel-slide/g) || []).length;
+    if (!html.includes('data-carousel data-interval="7000"')) addError(file, 'missing seven-second project carousel');
+    if (slideCount !== 6) addError(file, `expected six project carousel slides, found ${slideCount}`);
   }
 
   for (const [value, label, map] of [[title, 'title', titles], [description, 'description', descriptions], [canonical, 'canonical', canonicals]]) {

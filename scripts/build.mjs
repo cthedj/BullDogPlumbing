@@ -14,6 +14,7 @@ const socialProfiles = {
 };
 const googleProfileHref = 'https://g.page/r/CbLwKrQVqFdLEAI';
 const googleReviewHref = `${googleProfileHref}/review`;
+const assetVersion = '20260907-social-carousel-2';
 const heroPhotos = {
   planning: { image: 'about.jpg', width: 768, height: 960, alt: 'Bulldog Plumbing team member reviewing plans for a plumbing project' },
   team: { image: 'team.jpg', width: 900, height: 677, alt: 'Three members of the Bulldog Plumbing team', contain: true },
@@ -272,6 +273,10 @@ const pages = [
 const icons = {
   phone: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>',
   whatsapp: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.08 0C5.55 0 .23 5.32.23 11.86c0 2.09.55 4.13 1.6 5.93L.13 24l6.35-1.67a11.84 11.84 0 0 0 5.6 1.43h.01c6.53 0 11.85-5.32 11.85-11.86 0-3.17-1.22-6.15-3.44-8.4Zm-8.41 18.25h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.22-3.77.99 1-3.67-.24-.38a9.83 9.83 0 1 1 8.38 4.65Zm5.39-7.37c-.29-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47a8.96 8.96 0 0 1-1.65-2.06c-.17-.3-.02-.46.13-.61.13-.13.3-.34.44-.52.15-.17.2-.3.3-.49.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.12-.27-.2-.56-.34Z"/></svg>',
+  facebook: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8.5V7.2c0-1 .7-1.2 1.2-1.2H18V2.1L14.6 2C10.8 2 10 4.8 10 6.7v1.8H8V13h2v9h4v-9h3.4l.5-4.5H14Z"/></svg>',
+  instagram: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>',
+  tiktok: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4v10a4 4 0 1 1-4-4"/><path d="M15 4c.8 2.1 2.2 3.5 4 4"/></svg>',
+  star: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.7 2.8 5.7 6.3.9-4.5 4.4 1.1 6.2-5.7-3-5.7 3 1.1-6.2-4.5-4.4 6.3-.9L12 2.7Z"/></svg>',
   menu: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>'
 };
 
@@ -420,7 +425,7 @@ function head(page, graph) {
   <link rel="icon" href="${asset(page, 'favicon.ico')}" sizes="any">
   <link rel="apple-touch-icon" href="${asset(page, 'assets/img/logo.png')}">
   <link rel="manifest" href="${asset(page, 'site.webmanifest')}">
-  <link rel="stylesheet" href="${asset(page, 'assets/css/styles.css')}">
+  <link rel="stylesheet" href="${asset(page, 'assets/css/styles.css')}?v=${assetVersion}">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_ZA">
   <meta property="og:site_name" content="Bulldog Plumbing">
@@ -434,7 +439,7 @@ function head(page, graph) {
   <meta name="twitter:description" content="${page.description}">
   <meta name="twitter:image" content="${image}">
   <script type="application/ld+json">${JSON.stringify(graph)}</script>
-  <script defer src="${asset(page, 'assets/js/site.js')}"></script>
+  <script defer src="${asset(page, 'assets/js/site.js')}?v=${assetVersion}"></script>
 </head>`;
 }
 
@@ -472,6 +477,23 @@ function header(page) {
 function footer(page) {
   return `<footer class="site-footer">
   <div class="container">
+    <div class="footer-connect">
+      <div class="footer-connect__intro">
+        <p class="eyebrow">Follow Bulldog</p>
+        <h2>See more of the work.</h2>
+      </div>
+      <nav class="social-links" aria-label="Follow Bulldog Plumbing">
+        <a href="${socialProfiles.facebook}" target="_blank" rel="noopener noreferrer"><span class="social-links__icon">${icons.facebook}</span><span>Facebook</span></a>
+        <a href="${socialProfiles.instagram}" target="_blank" rel="noopener noreferrer"><span class="social-links__icon">${icons.instagram}</span><span>Instagram</span></a>
+        <a href="${socialProfiles.tiktok}" target="_blank" rel="noopener noreferrer"><span class="social-links__icon">${icons.tiktok}</span><span>TikTok</span></a>
+        <a href="${whatsappHref}" target="_blank" rel="noopener noreferrer"><span class="social-links__icon">${icons.whatsapp}</span><span>WhatsApp</span></a>
+      </nav>
+      <a class="footer-review" href="${googleReviewHref}" target="_blank" rel="noopener noreferrer">
+        <span class="footer-review__icon">${icons.star}</span>
+        <span><small>Worked with Bulldog?</small><strong>Review us on Google</strong></span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="${asset(page, 'assets/img/logo.png')}" width="340" height="340" loading="lazy" alt="Bulldog Plumbing">
@@ -509,15 +531,6 @@ function footer(page) {
     </div>
     <div class="footer-bottom">
       <p>© <span data-year>${new Date().getFullYear()}</span> Bulldog Plumbing. All rights reserved.</p>
-      <nav class="footer-social" aria-label="Bulldog Plumbing social media">
-        <a href="${socialProfiles.facebook}" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <span aria-hidden="true">|</span>
-        <a href="${socialProfiles.instagram}" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <span aria-hidden="true">|</span>
-        <a href="${socialProfiles.tiktok}" target="_blank" rel="noopener noreferrer">TikTok</a>
-        <span aria-hidden="true">|</span>
-        <a href="${whatsappHref}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-      </nav>
       <p>Serving Cape Town from Dreyersdal, Western Cape.</p>
     </div>
   </div>
@@ -582,8 +595,9 @@ function reviewCta() {
   return `<section class="section section--review" id="google-reviews">
   <div class="container">
     <div class="review-panel">
-      <div><p class="eyebrow">Google reviews</p><h2>Used Bulldog recently?</h2><p>Share an honest review to help other Cape Town customers choose their plumber with confidence.</p></div>
-      <a class="button button--light" href="${googleReviewHref}" target="_blank" rel="noopener noreferrer">Leave a Google review <span aria-hidden="true">→</span></a>
+      <span class="review-panel__icon">${icons.star}</span>
+      <div><p class="eyebrow">Google reviews</p><h2>Tell Cape Town how Bulldog did.</h2><p>If Bulldog Plumbing has worked at your home or business, share an honest review. Your experience helps local customers choose with confidence.</p></div>
+      <a class="button button--light" href="${googleReviewHref}" target="_blank" rel="noopener noreferrer">Share your experience <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>`;
@@ -651,11 +665,25 @@ function projectGallery(page) {
       <div><p class="eyebrow">Real work. Real results.</p><h2>Our plumbing projects in action</h2><p class="section-lead">A look at recent Bulldog Plumbing installations, repairs and drain work around Cape Town.</p></div>
       <a class="text-link" href="${socialProfiles.instagram}" target="_blank" rel="noopener noreferrer">See more on Instagram <span aria-hidden="true">→</span></a>
     </div>
-    <div class="project-grid">
-      ${projects.map((project) => `<figure class="project-card${project.source ? ' project-card--social' : ''}">
-        ${project.source ? `<a href="${project.source}" target="_blank" rel="noopener noreferrer" aria-label="View ${project.title} on Instagram">` : ''}<img src="${asset(page, `assets/img/${project.image}`)}" width="${project.width}" height="${project.height}" loading="lazy" decoding="async" alt="${project.description}">${project.source ? '</a>' : ''}
-        <figcaption><strong>${project.title}</strong><span>${project.description}${project.source ? ' View the original post on Instagram.' : ''}</span></figcaption>
-      </figure>`).join('\n      ')}
+    <div class="project-carousel" data-carousel data-interval="7000" aria-roledescription="carousel" aria-label="Bulldog Plumbing project photographs">
+      <div class="project-carousel__stage">
+        ${projects.map((project, index) => `<figure class="project-slide${index === 0 ? ' is-active' : ''}${project.source ? ' project-slide--social' : ''}" data-carousel-slide aria-roledescription="slide" aria-label="${index + 1} of ${projects.length}: ${project.title}" aria-hidden="${index === 0 ? 'false' : 'true'}">
+          <div class="project-slide__media">${project.source ? `<a href="${project.source}" target="_blank" rel="noopener noreferrer" aria-label="View ${project.title} on Instagram">` : ''}<img src="${asset(page, `assets/img/${project.image}`)}" width="${project.width}" height="${project.height}" loading="lazy" decoding="async" alt="${project.description}">${project.source ? '</a>' : ''}</div>
+          <figcaption><span class="project-slide__number">${String(index + 1).padStart(2, '0')} / ${String(projects.length).padStart(2, '0')}</span><strong>${project.title}</strong><span>${project.description}${project.source ? ' View the original post on Instagram.' : ''}</span></figcaption>
+        </figure>`).join('\n        ')}
+      </div>
+      <div class="project-carousel__toolbar">
+        <p class="project-carousel__status" data-carousel-status>Showing 1 of ${projects.length}: ${projects[0].title}</p>
+        <div class="project-carousel__dots" aria-label="Choose a project photograph">
+          ${projects.map((project, index) => `<button type="button" data-carousel-dot="${index}" aria-label="Show ${project.title}" aria-current="${index === 0 ? 'true' : 'false'}"></button>`).join('')}
+        </div>
+        <div class="project-carousel__controls">
+          <button type="button" data-carousel-prev aria-label="Show previous project photograph"><span aria-hidden="true">←</span></button>
+          <button type="button" data-carousel-toggle aria-label="Pause slideshow">Pause</button>
+          <button type="button" data-carousel-next aria-label="Show next project photograph"><span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+      <p class="project-carousel__timing">Slides advance every 7 seconds. Use the controls to browse at your own pace.</p>
     </div>
   </div>
 </section>`;
